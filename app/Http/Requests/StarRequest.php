@@ -27,7 +27,7 @@ class StarRequest extends FormRequest
             'lastname' => ['required'],
             'firstname' => ['required'],
             'description' => ['required'],
-            'image' => ['mimes:png,jpg']
+            'image' => ['required']
         ];
     }
 }

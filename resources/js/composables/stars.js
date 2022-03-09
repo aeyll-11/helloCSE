@@ -24,7 +24,17 @@ export default function useStars() {
     const storeStars = async (data) => {
         errors.value = ''
         try{
-            await axios.post('/api/stars/', data);
+            const formData = new FormData()
+            formData.append('image', data.image, data.image.name)
+            formData.append('firstname', data.firstname)
+            formData.append('lastname', data.lastname)
+            formData.append('description', data.description)
+            console.log(formData)
+            await axios.post('/api/stars/', formData, {
+                headers: {
+                    "Content-Type": "multipart/form-data",
+                }
+            });
             await router.push({name: 'stars.index'});
         } catch (e) {
             if(e.response.status === 422){

@@ -7,7 +7,7 @@
         </div>
     </div>
 
-    <form class="space-y-6" @submit.prevent="saveStar">
+    <form class="space-y-6" @submit.prevent="saveStar" enctype='multipart/form-data' >
         <div class="space-y-4 rounded-md shadow-sm">
             <div>
                 <label for="firstname" class="block text-sm font-medium text-gray-700">First Name</label>
@@ -35,12 +35,14 @@
                            v-model="form.description">
                 </div>
             </div>
+
             <div>
                 <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
                 <div class="mt-1">
-                    <input ref="file" type="file" name="file" id="file"
+                    <input type="file" name="image" id="image"
                            class="block mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                           @change="selectImage">
+                           @change="selectImage"
+                           >
                 </div>
             </div>
 
@@ -64,18 +66,19 @@ export default {
             'firstname':'',
             'lastname':'',
             'description':'',
-            'image': ''
+            'image': '',
         });
 
         const { errors ,storeStars, file} = useStars();
 
-        const selectImage = () => {
-            console.log(file)
+        const selectImage = (event) => {
+            form.image = event.target.files[0]
         }
 
         const saveStar = async () => {
             await storeStars({...form});
         }
+
         return {
             form,
             errors,

@@ -1,7 +1,7 @@
 <template>
     <div class="overflow-hidden overflow-x-auto min-w-full align-middle sm:rounded-md">
         <div class="flex place-content-end mb-4">
-            <div class="px-4 py-2 text-gray-800 bg-gray hover:bg-gray-700 cursor-pointer border">
+            <div class="px-4 py-2 text-gray-800 bg-indigo hover:bg-indigo-700 cursor-pointer border">
                 <router-link :to="{ name: 'stars.create' }" class="text-sm font-medium">Create a Star</router-link>
             </div>
         </div>

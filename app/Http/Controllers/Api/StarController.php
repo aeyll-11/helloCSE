@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StarRequest;
 use App\Http\Resources\StarResource;
 use App\Models\Star;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
 class StarController extends Controller
@@ -28,14 +29,12 @@ class StarController extends Controller
      */
     public function store(StarRequest $request)
     {
-        $star = Star::create($request->validated());
-
-        $newStar = new StarResource($star);
-
-        $starName = time().'_'.$request->getClientOriginalName();
-        $filePath = $request->file('image')->storeAs('uploads', $starName, 'public');
-        $newStar->image = "/storage/" . $filePath;
-        return $newStar;
+        $image = $request->file('image')->store('public');
+        $url = Storage::url($image);
+        $request->data = $request->all();
+        $request->data['image'] = $url;
+        $star = Star::create($request->data);
+        return new StarResource($star);
     }
 
     /**

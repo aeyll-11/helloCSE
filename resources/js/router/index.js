@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import StarsIndex from '../components/stars/StarsIndex.vue';
 import StarsCreate from '../components/stars/StarsCreate.vue';
 import StarsEdit from '../components/stars/StarsEdit.vue';
+import Stars from '../components/stars/Stars.vue';
 const routes = [
     {
         path: '/dashboard',
@@ -19,6 +20,11 @@ const routes = [
         name: 'stars.edit',
         component: StarsEdit,
         props: true
+    },
+    {
+        path: '/stars',
+        name: 'stars.display',
+        component: Stars,
     }
 ]
 
