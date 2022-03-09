@@ -23080,7 +23080,7 @@ __webpack_require__.r(__webpack_exports__);
     (0,vue__WEBPACK_IMPORTED_MODULE_1__.onMounted)(getStars);
 
     var getImage = function getImage(name) {
-      return './public/' + name;
+      return './public/image' + name;
     };
 
     var selectItem = function selectItem(id) {

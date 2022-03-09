@@ -118,7 +118,7 @@ export default {
 
         onMounted(getStars)
         const getImage = (name) =>{
-            return './public/' + name
+            return './public/image' + name
         }
 
         const selectItem = (id) => {
