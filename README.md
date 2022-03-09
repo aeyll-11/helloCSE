@@ -3,7 +3,7 @@
     
 ### `1.Utiliser composer install et npm i`
 ### `2.cp .env.example .env`
-### `3.Rentrer le nom de votre base de donnée dans le .env`
+### `3.Rentrer le nom de votre base de données dans le .env`
 ### `4.php artisan key:generate`
 ### `5.php artisan storage:link `
 ### `6.php artisan serve`
