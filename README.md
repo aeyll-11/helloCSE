@@ -8,5 +8,4 @@
 ### `5.php artisan storage:link `
 ### `6.php artisan serve`
 ### `7.Connectez-vous à l'aide des identifiants suivant email= helloCSE@admin password= adminCSE ou Créer un nouveau Compte en haut à droite.`
-8. <h3>Se rendre à http://127.0.0.1:8000</h3>
-## About Laravel
+### `8.Se rendre à http://localhost:8000`
