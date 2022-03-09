@@ -101,7 +101,7 @@
                         </div>
                     </div>
                     <div class="border-b nav">
-                        <button @click="selectItem(item.id)" >{{item.firstname}} {{item.lastname}}</button>
+                        <button @click="selectItem(item.id)" class="w-full">{{item.firstname}} {{item.lastname}}</button>
                     </div>
                 </div>
             </section>
@@ -117,6 +117,8 @@ export default {
         const { stars, getStars, getStar, star} = useStars()
 
         onMounted(getStars)
+
+
         const getImage = (name) =>{
             return './public/image' + name
         }

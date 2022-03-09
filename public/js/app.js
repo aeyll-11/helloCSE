@@ -23432,7 +23432,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     )])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
       onClick: function onClick($event) {
         return $setup.selectItem(item.id);
-      }
+      },
+      "class": "w-full"
     }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.firstname) + " " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.lastname), 9
     /* TEXT, PROPS */
     , _hoisted_16)])]);
